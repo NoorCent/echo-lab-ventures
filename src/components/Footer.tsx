@@ -29,7 +29,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-cyan-400 to-teal-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
                 <span className="font-display font-bold text-lg text-primary-foreground">N</span>
               </div>
               <span className="font-display font-bold text-xl text-foreground">NexusForge</span>

@@ -23,7 +23,7 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="py-16 border-t border-border/50">
+    <footer className="py-16 border-t border-border/50" aria-label="Site footer">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -53,7 +53,7 @@ export const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
+          <nav aria-label="Services">
             <h4 className="font-display font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
@@ -67,10 +67,10 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Company */}
-          <div>
+          <nav aria-label="Company">
             <h4 className="font-display font-semibold mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
@@ -84,7 +84,7 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Bottom Bar */}
@@ -93,7 +93,7 @@ export const Footer = () => {
             © 2026 NexusForge. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-accent fill-accent" /> by university students
+            Made with <Heart className="w-4 h-4 text-accent fill-accent" aria-hidden="true" /> <span className="sr-only">love</span> by university students
           </p>
         </div>
       </div>

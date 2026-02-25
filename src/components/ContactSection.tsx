@@ -4,6 +4,7 @@ import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-rea
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '@/hooks/use-toast';
 
 const contactInfo = [
@@ -81,8 +82,9 @@ export const ContactSection = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Name</label>
+                  <label htmlFor="contact-name" className="block text-sm font-medium mb-2">Name</label>
                   <Input
+                    id="contact-name"
                     type="text"
                     placeholder="Your name"
                     value={formData.name}
@@ -92,8 +94,9 @@ export const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
+                  <label htmlFor="contact-email" className="block text-sm font-medium mb-2">Email</label>
                   <Input
+                    id="contact-email"
                     type="email"
                     placeholder="your@email.com"
                     value={formData.email}
@@ -106,39 +109,46 @@ export const ContactSection = () => {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Project Type</label>
-                  <select
+                  <label htmlFor="contact-project-type" className="block text-sm font-medium mb-2">Project Type</label>
+                  <Select
                     value={formData.projectType}
-                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg bg-card/50 border border-border/50 text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    onValueChange={(value) => setFormData({ ...formData, projectType: value })}
                   >
-                    <option value="" className="bg-card">Select type</option>
-                    <option value="web" className="bg-card">Web Development</option>
-                    <option value="mobile" className="bg-card">Mobile App</option>
-                    <option value="ai" className="bg-card">AI Solution</option>
-                    <option value="ml" className="bg-card">Machine Learning</option>
-                    <option value="other" className="bg-card">Other</option>
-                  </select>
+                    <SelectTrigger id="contact-project-type" className="bg-card/50 border-border/50 focus:border-primary">
+                      <SelectValue placeholder="Select type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="web">Web Development</SelectItem>
+                      <SelectItem value="mobile">Mobile App</SelectItem>
+                      <SelectItem value="ai">AI Solution</SelectItem>
+                      <SelectItem value="ml">Machine Learning</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Budget Range (Optional)</label>
-                  <select
+                  <label htmlFor="contact-budget" className="block text-sm font-medium mb-2">Budget Range (Optional)</label>
+                  <Select
                     value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg bg-card/50 border border-border/50 text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    onValueChange={(value) => setFormData({ ...formData, budget: value })}
                   >
-                    <option value="" className="bg-card">Select range</option>
-                    <option value="<1k" className="bg-card">Less than $1,000</option>
-                    <option value="1k-5k" className="bg-card">$1,000 - $5,000</option>
-                    <option value="5k-10k" className="bg-card">$5,000 - $10,000</option>
-                    <option value=">10k" className="bg-card">More than $10,000</option>
-                  </select>
+                    <SelectTrigger id="contact-budget" className="bg-card/50 border-border/50 focus:border-primary">
+                      <SelectValue placeholder="Select range" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="lt-1k">Less than $1,000</SelectItem>
+                      <SelectItem value="1k-5k">$1,000 - $5,000</SelectItem>
+                      <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
+                      <SelectItem value="gt-10k">More than $10,000</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Message</label>
+                <label htmlFor="contact-message" className="block text-sm font-medium mb-2">Message</label>
                 <Textarea
+                  id="contact-message"
                   placeholder="Tell us about your project..."
                   rows={5}
                   value={formData.message}

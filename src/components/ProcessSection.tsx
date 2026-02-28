@@ -1,99 +1,60 @@
 import { motion } from 'framer-motion';
 import { Search, Palette, Code, Rocket } from 'lucide-react';
+import { SectionHeader } from '@/components/SectionHeader';
 
 const steps = [
-  {
-    icon: Search,
-    title: 'Discovery',
-    description: 'We learn about your vision and requirements',
-    number: '01',
-  },
-  {
-    icon: Palette,
-    title: 'Design',
-    description: 'We create mockups and get your approval',
-    number: '02',
-  },
-  {
-    icon: Code,
-    title: 'Development',
-    description: 'We build your solution with regular updates',
-    number: '03',
-  },
-  {
-    icon: Rocket,
-    title: 'Launch',
-    description: 'We deploy, test, and provide support',
-    number: '04',
-  },
+  { number: '01', title: 'Discovery', description: 'We align on scope, constraints, and success criteria.', icon: Search },
+  { number: '02', title: 'Design', description: 'Architecture and interfaces before writing code.', icon: Palette },
+  { number: '03', title: 'Build', description: 'Iterative development with regular check-ins.', icon: Code },
+  { number: '04', title: 'Ship & support', description: 'Deploy, monitor, and iterate.', icon: Rocket },
 ];
 
 export const ProcessSection = () => {
   return (
-    <section className="py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+    <section id="process" className="section-padding relative overflow-hidden border-t border-[#e8e8e8] bg-white" aria-labelledby="process-heading">
+      <div className="container-narrow relative">
+        <SectionHeader
+          id="process-heading"
+          label="Process"
+          title="How we work"
+          subtitle={<p>A clear process that keeps you in the loop.</p>}
+        />
 
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            Our Process
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            How We <span className="gradient-text">Work</span>
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            A streamlined process that keeps you informed every step of the way.
-          </p>
-        </motion.div>
-
-        {/* Process Steps */}
         <div className="relative">
-          {/* Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-primary/50 via-secondary/50 to-accent/50" />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative text-center lg:text-left"
-              >
-                {/* Step Number & Icon */}
-                <div className="relative inline-flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg glow">
-                    <step.icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
-                  <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-background border-2 border-primary flex items-center justify-center text-xs font-bold text-primary">
-                    {step.number}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <h3 className="font-display text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {step.description}
-                </p>
-
-                {/* Arrow (Mobile) */}
-                {index < steps.length - 1 && (
-                  <div className="lg:hidden flex justify-center mt-6">
-                    <div className="w-0.5 h-8 bg-gradient-to-b from-primary/50 to-transparent" />
-                  </div>
-                )}
-              </motion.div>
-            ))}
+          {/* Timeline connector (desktop) - centered in grid row */}
+          <div className="process-timeline absolute left-0 right-0 top-1/2 z-0 hidden h-0.5 -translate-y-1/2 lg:block" aria-hidden>
+            <div className="mx-auto h-full max-w-[1152px] bg-gradient-to-r from-transparent via-[var(--accent-bar)]/25 to-transparent px-4" />
           </div>
+
+          <motion.div
+          className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, staggerChildren: 0.08 }}
+        >
+          {steps.map((step) => {
+            const Icon = step.icon;
+            return (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="process-step card-lift group relative z-10 rounded-2xl border border-[#e8e8e8] bg-white p-6 shadow-soft hover:border-[var(--accent-bar)]/30 hover:shadow-card-hover"
+              >
+                <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--accent-bar)] text-sm font-bold text-white shadow-[0_4px_14px_rgba(13,148,136,0.35)]">
+                  {step.number}
+                </span>
+                <span className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-[var(--accent-bar)] transition-colors group-hover:bg-primary/20 group-hover:scale-105">
+                  <Icon className="h-6 w-6" />
+                </span>
+                <h3 className="font-display text-lg font-semibold text-[#2a2a2a]">{step.title}</h3>
+                <p className="mt-2 text-left text-sm leading-[1.6] text-[#2a2a2a]/70 text-justify hyphens-auto">{step.description}</p>
+              </motion.div>
+            );
+          })}
+          </motion.div>
         </div>
       </div>
     </section>

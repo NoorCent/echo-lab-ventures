@@ -1,225 +1,132 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import { SectionHeader } from '@/components/SectionHeader';
+import { site } from '@/data/site';
 import { useToast } from '@/hooks/use-toast';
-
-const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'hello@nexusforge.dev' },
-  { icon: Phone, label: 'WhatsApp', value: '+251 91 234 5678' },
-  { icon: MapPin, label: 'Location', value: 'Addis Ababa, Ethiopia' },
-];
-
-const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-];
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 export const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    projectType: '',
-    budget: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    setFormData({ name: '', email: '', projectType: '', budget: '', message: '' });
+    await new Promise((r) => setTimeout(r, 1000));
+    toast({ title: 'Message sent!', description: "We'll get back to you within 24 hours." });
+    setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
   };
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 mesh-gradient opacity-20" />
-
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            Get in Touch
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Let's Start a <span className="gradient-text">Conversation</span>
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Have a project in mind? We'd love to hear about it.
+    <section id="contact" className="section-padding relative overflow-hidden border-t border-[#e8e8e8] bg-[#f5f5f5] pt-14 md:pt-20" aria-labelledby="contact-heading">
+      <div className="absolute inset-0 bg-dot-pattern opacity-20" aria-hidden />
+      <div className="container-narrow relative">
+        <SectionHeader id="contact-heading" label="Get in touch" title="Contact Us" />
+        <div className="mt-6 max-w-[42rem] md:mt-8">
+          <h3 className="contact_sub_title font-display font-bold text-2xl text-[#2a2a2a] md:text-3xl md:leading-tight">
+            Let's build something great together
+          </h3>
+          <p className="contact_sub_content mt-3 text-left text-[15px] leading-[1.7] text-[#404040] text-justify hyphens-auto md:mt-4 md:text-base">
+            Have a question, suggestion, or just want to say hello? We'd love to hear from you. Feel free to reach out!
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="contact-name" className="block text-sm font-medium mb-2">Name</label>
-                  <Input
-                    id="contact-name"
-                    type="text"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="bg-card/50 border-border/50 focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="contact-email" className="block text-sm font-medium mb-2">Email</label>
-                  <Input
-                    id="contact-email"
-                    type="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className="bg-card/50 border-border/50 focus:border-primary"
-                  />
-                </div>
-              </div>
+        <motion.div
+          className="contact_details mt-8 grid gap-10 md:mt-12 md:grid-cols-2 md:gap-12"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="contact_maps flex flex-col space-y-5">
+            <a href={`mailto:${site.email}`} className="flex items-center gap-4 text-[15px] text-[#404040] no-underline">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[#d9d9d9] bg-[#f8f8f8] text-[#2a2a2a]">
+                <Mail className="h-4 w-4" />
+              </span>
+              {site.email}
+            </a>
+            <a href="tel:+251912345678" className="flex items-center gap-4 text-[15px] text-[#404040] no-underline">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[#d9d9d9] bg-[#f8f8f8] text-[#2a2a2a]">
+                <Phone className="h-4 w-4" />
+              </span>
+              +251 91 234 5678
+            </a>
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="map_label flex items-center gap-4 text-[15px] text-[var(--accent-bar)] no-underline"
+            >
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[#d9d9d9] bg-[#f8f8f8] text-[#2a2a2a]">
+                <MapPin className="h-4 w-4" />
+              </span>
+              Addis Ababa, Ethiopia
+            </a>
+          </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="contact-project-type" className="block text-sm font-medium mb-2">Project Type</label>
-                  <Select
-                    value={formData.projectType}
-                    onValueChange={(value) => setFormData({ ...formData, projectType: value })}
-                  >
-                    <SelectTrigger id="contact-project-type" className="bg-card/50 border-border/50 focus:border-primary">
-                      <SelectValue placeholder="Select type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="web">Web Development</SelectItem>
-                      <SelectItem value="mobile">Mobile App</SelectItem>
-                      <SelectItem value="ai">AI Solution</SelectItem>
-                      <SelectItem value="ml">Machine Learning</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label htmlFor="contact-budget" className="block text-sm font-medium mb-2">Budget Range (Optional)</label>
-                  <Select
-                    value={formData.budget}
-                    onValueChange={(value) => setFormData({ ...formData, budget: value })}
-                  >
-                    <SelectTrigger id="contact-budget" className="bg-card/50 border-border/50 focus:border-primary">
-                      <SelectValue placeholder="Select range" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="lt-1k">Less than $1,000</SelectItem>
-                      <SelectItem value="1k-5k">$1,000 - $5,000</SelectItem>
-                      <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                      <SelectItem value="gt-10k">More than $10,000</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
+          <div className="contact_form rounded-2xl border border-white/40 bg-white/75 p-6 shadow-soft backdrop-blur-xl">
+            <h4 className="mb-5 font-display font-bold text-2xl text-[#2a2a2a]">Get In Touch Now</h4>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="contact-message" className="block text-sm font-medium mb-2">Message</label>
+                <label className="mb-2 block text-[15px] font-medium">
+                  Name <span className="text-red-500">*</span>
+                </label>
+                <Input
+                  required
+                  placeholder="Enter Input"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="h-10 w-full rounded-lg border border-[#e0e0e0] bg-white px-3 text-sm transition-colors focus:border-[var(--accent-bar)] focus:ring-2 focus:ring-[var(--accent-bar)]/20 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-[15px] font-medium">
+                  Email <span className="text-red-500">*</span>
+                </label>
+                <Input
+                  type="email"
+                  required
+                  placeholder="Enter Input"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="h-10 w-full rounded-lg border border-[#e0e0e0] bg-white px-3 text-sm transition-colors focus:border-[var(--accent-bar)] focus:ring-2 focus:ring-[var(--accent-bar)]/20 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-[15px] font-medium">
+                  Subject <span className="text-red-500">*</span>
+                </label>
+                <Input
+                  required
+                  placeholder="Enter Subject"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className="h-10 w-full rounded-lg border border-[#e0e0e0] bg-white px-3 text-sm transition-colors focus:border-[var(--accent-bar)] focus:ring-2 focus:ring-[var(--accent-bar)]/20 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-[15px] font-medium">
+                  Message <span className="text-red-500">*</span>
+                </label>
                 <Textarea
-                  id="contact-message"
-                  placeholder="Tell us about your project..."
+                  required
+                  placeholder="Enter Input"
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                  className="bg-card/50 border-border/50 focus:border-primary resize-none"
+                  className="min-h-[159px] w-full resize-none rounded-lg border border-[#e0e0e0] bg-white px-3 py-2 text-sm transition-colors focus:border-[var(--accent-bar)] focus:ring-2 focus:ring-[var(--accent-bar)]/20 focus:outline-none"
                 />
               </div>
-
-              <Button 
-                type="submit" 
-                variant="hero" 
-                size="lg" 
-                className="w-full group"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Button type="submit" className="btn-primary w-full" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Get in touch 👋🏽'}
               </Button>
             </form>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            <div className="p-8 rounded-2xl glass-card">
-              <h3 className="font-display text-xl font-bold mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                {contactInfo.map((item) => (
-                  <div key={item.label} className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{item.label}</p>
-                      <p className="font-medium">{item.value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="p-8 rounded-2xl glass-card">
-              <h3 className="font-display text-xl font-bold mb-6">Follow Us</h3>
-              <div className="flex gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="w-12 h-12 rounded-xl bg-muted/50 flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary transition-all duration-200"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Response Time */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20">
-              <p className="text-sm text-muted-foreground mb-1">Average Response Time</p>
-              <p className="font-display text-2xl font-bold gradient-text">Under 24 hours</p>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

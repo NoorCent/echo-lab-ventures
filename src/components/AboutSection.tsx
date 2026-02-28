@@ -1,119 +1,103 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Code2, Database, Gauge, FileCode } from 'lucide-react';
+import { SectionHeader } from '@/components/SectionHeader';
+import { site } from '@/data/site';
 
-const team = [
+const focusAreas = [
   {
-    name: 'Nebiyu Musbah',
-    role: 'Full-Stack Developer & Team Lead',
-    initials: 'NM',
-    gradient: 'from-cyan-500 to-blue-500',
+    label: 'APIs & service design',
+    description: 'RESTful and GraphQL APIs that integrate cleanly and scale with your product.',
+    icon: Code2,
   },
   {
-    name: 'Abdulaziz Isa',
-    role: 'Mobile Developer & AI Specialist',
-    initials: 'AI',
-    gradient: 'from-purple-500 to-pink-500',
+    label: 'Databases & data modeling',
+    description: 'Schema design, migrations, and query optimization for reliable data layers.',
+    icon: Database,
   },
   {
-    name: 'Abdallah Abdurazak',
-    role: 'Backend Developer & ML Engineer',
-    initials: 'AA',
-    gradient: 'from-orange-500 to-red-500',
+    label: 'Performance & reliability',
+    description: 'Monitoring, caching, and architecture that keeps systems fast and available.',
+    icon: Gauge,
   },
   {
-    name: 'Sadam Husen',
-    role: 'Frontend Developer & UI Designer',
-    initials: 'SH',
-    gradient: 'from-teal-500 to-green-500',
+    label: 'Clean, maintainable code',
+    description: 'TypeScript, tests, and clear patterns so your codebase stays manageable.',
+    icon: FileCode,
   },
 ];
 
-const containerVariants = {
+const container = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.08 },
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+const item = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] },
   },
 };
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
+    <section id="about" className="section-padding border-t border-[#e6e6e6] bg-[#f5f5f5]" aria-labelledby="about-heading">
+      <div className="container-narrow">
+        <SectionHeader
+          id="about-heading"
+          label="Who we are"
+          title="About"
+          subtitle={<p>{site.description}</p>}
+        />
 
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
+        {/* Mission statement */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          className="relative overflow-hidden rounded-2xl border border-[#e8e8e8] bg-white px-6 py-8 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] md:px-10 md:py-10"
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            Our Team
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Meet the Minds <span className="gradient-text">Behind the Magic</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We're a team of 4 university students passionate about technology and committed to 
-            delivering exceptional digital solutions. What we lack in years, we make up for in 
-            dedication, fresh perspectives, and cutting-edge skills.
+          <span className="absolute left-0 top-0 h-full w-1 rounded-r bg-[var(--accent-bar)]" aria-hidden />
+          <p className="font-display text-xl font-semibold leading-snug text-[#2a2a2a] md:text-2xl md:leading-snug">
+            We build systems that scale.
+          </p>
+          <p className="mt-4 max-w-2xl text-sm leading-[1.7] text-[#2a2a2a]/75 md:text-base">
+            A team of four building APIs, services, and full-stack products with clarity and maintainability at the core. We focus on backend and full-stack engineering so you can ship faster and iterate with confidence.
           </p>
         </motion.div>
 
-        {/* Team Grid */}
+        {/* Focus areas — 2x2 grid with icon, title, description */}
         <motion.div
-          variants={containerVariants}
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-14 lg:gap-8"
+          variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          viewport={{ once: true, margin: '-40px' }}
         >
-          {team.map((member) => (
-            <motion.div
-              key={member.name}
-              variants={itemVariants}
-              className="group relative p-6 rounded-2xl glass-card text-center hover:bg-card/60 transition-all duration-500"
+          {focusAreas.map(({ label, description, icon: Icon }) => (
+            <motion.article
+              key={label}
+              variants={item}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+              className="group flex gap-5 rounded-2xl border border-[#e8e8e8] bg-white p-6 shadow-[0_1px_8px_0_rgba(72,79,90,0.08)] transition-shadow duration-300 hover:border-[var(--accent-bar)]/20 hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.1)]"
             >
-              {/* Avatar */}
-              <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                <span className="font-display text-2xl font-bold text-white">
-                  {member.initials}
-                </span>
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-bar)]/10 text-[var(--accent-bar)] transition-colors duration-300 group-hover:bg-[var(--accent-bar)]/20">
+                <Icon className="h-6 w-6" />
+              </span>
+              <div className="min-w-0">
+                <h3 className="font-display text-lg font-semibold text-[#2a2a2a]">
+                  {label}
+                </h3>
+                <p className="mt-2 text-sm leading-[1.6] text-[#2a2a2a]/70">
+                  {description}
+                </p>
               </div>
-
-              {/* Info */}
-              <h3 className="font-display text-xl font-bold mb-1 group-hover:text-primary transition-colors">
-                {member.name}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">{member.role}</p>
-
-              {/* Social Links */}
-              <div className="flex items-center justify-center gap-3">
-                {[Github, Linkedin, Twitter].map((Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-9 h-9 rounded-full bg-muted/50 flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary transition-all duration-200"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                ))}
-              </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </div>

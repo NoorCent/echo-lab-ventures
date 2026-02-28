@@ -1,114 +1,112 @@
 import { motion } from 'framer-motion';
-import { Globe, Smartphone, Bot, Brain } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { SectionHeader } from '@/components/SectionHeader';
+import { services } from '@/data/site';
 
-const services = [
-  {
-    icon: Globe,
-    title: 'Web Development',
-    description: 'From landing pages to complex web apps',
-    details: 'Custom websites, e-commerce platforms, web applications built with React, Next.js, Node.js, and modern frameworks.',
-    gradient: 'from-cyan-500 to-blue-500',
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile App Development',
-    description: 'Native performance, stunning design',
-    details: 'iOS and Android applications with cross-platform solutions using Flutter and React Native.',
-    gradient: 'from-purple-500 to-pink-500',
-  },
-  {
-    icon: Bot,
-    title: 'AI Solutions',
-    description: 'Intelligent solutions for modern problems',
-    details: 'Custom AI integrations, chatbots, and automation. Smart features that transform your business.',
-    gradient: 'from-orange-500 to-red-500',
-  },
-  {
-    icon: Brain,
-    title: 'Machine Learning',
-    description: 'Turn your data into insights',
-    details: 'Data analysis, predictive models, recommendation systems, computer vision, and NLP solutions.',
-    gradient: 'from-teal-500 to-green-500',
-  },
-];
-
-const containerVariants = {
+const container = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.12, delayChildren: 0.08 },
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+const card = {
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
   },
 };
 
+/**
+ * Services section — Swenetix-style cards with enhanced animations and effects.
+ */
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            What We Offer
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Services That <span className="gradient-text">Transform</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We specialize in building digital products that help businesses grow and succeed in the modern world.
-          </p>
-        </motion.div>
+    <section id="services" className="our_services_container section-padding border-t border-[#e8e8e8] bg-[#f5f5f5] overflow-hidden">
+      <div className="container-narrow">
+        <SectionHeader
+          label="What we do"
+          title="Services"
+          subtitle={
+            <p>
+              We offer innovative, tailored solutions to help businesses optimize operations and drive success. With a focus on digital transformation, we create scalable, reliable systems that empower organizations to thrive.
+            </p>
+          }
+        />
 
-        {/* Services Grid */}
         <motion.div
-          variants={containerVariants}
+          className="services_container grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10"
+          variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          viewport={{ once: true, margin: '-60px' }}
         >
-          {services.map((service) => (
-            <motion.div
-              key={service.title}
-              variants={itemVariants}
-              className="group relative p-8 rounded-2xl glass-card gradient-border hover:bg-card/60 transition-all duration-500 cursor-pointer"
-            >
-              {/* Icon */}
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="w-7 h-7 text-white" />
-              </div>
+          {services.map((service, index) => {
+            const isDark = index === 1 || index === 2;
+            return (
+              <motion.article
+                key={service.title}
+                variants={card}
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                className={`service group/card relative flex min-h-[280px] flex-col justify-between gap-4 overflow-hidden rounded-xl p-6 shadow-[0_1px_8px_0_rgba(72,79,90,0.16)] transition-shadow duration-300 md:min-h-[310px] md:flex-row md:items-center md:gap-4 md:p-8 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.18)] ${
+                  isDark
+                    ? 'bg-primary text-white hover:shadow-[0_20px_40px_-12px_rgba(13,148,136,0.4)]'
+                    : 'bg-[#f8f8f8] text-[#2a2a2a]'
+                }`}
+              >
+                {/* Subtle shine sweep on hover (light cards) */}
+                {!isDark && (
+                  <span className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500 group-hover/card:opacity-100" aria-hidden>
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/card:translate-x-full transition-transform duration-700 ease-out" />
+                  </span>
+                )}
 
-              {/* Content */}
-              <h3 className="font-display text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-primary/80 font-medium mb-3">{service.description}</p>
-              <p className="text-muted-foreground leading-relaxed">{service.details}</p>
+                <div className="title_anchor relative z-10 flex w-full flex-col justify-between gap-6 md:w-1/2">
+                  <motion.h3
+                    className="font-display text-xl font-medium leading-tight md:text-2xl md:leading-9"
+                    initial={false}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {service.title}
+                  </motion.h3>
+                  <a
+                    href={service.href}
+                    className={`service_link group/link inline-flex w-fit items-center gap-2 font-medium no-underline transition-all ${
+                      isDark ? 'text-white' : 'text-[#2a2a2a]'
+                    }`}
+                  >
+                    <motion.span
+                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#2a2a2a]"
+                      initial={false}
+                      whileHover={{ scale: 1.1, x: 2 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    >
+                      <ArrowRight className="h-3.5 w-3.5 md:rotate-[-45deg] group-hover/link:rotate-0 transition-transform duration-300" />
+                    </motion.span>
+                    <span className="relative">
+                      Learn More
+                      <span className="absolute bottom-0 left-0 h-px w-0 bg-current transition-[width] duration-200 group-hover/link:w-full" />
+                    </span>
+                  </a>
+                </div>
 
-              {/* Hover Glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" 
-                   style={{ background: `linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))` }} 
-              />
-            </motion.div>
-          ))}
+                <div className="image_container relative z-10 h-40 w-full overflow-hidden rounded-lg md:h-[200px] md:w-1/2">
+                  <img
+                    src={service.imageUrl}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-110"
+                  />
+                  {/* Teal tint overlay on card hover */}
+                  <span className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover/card:bg-primary/10 pointer-events-none rounded-lg" aria-hidden />
+                </div>
+              </motion.article>
+            );
+          })}
         </motion.div>
       </div>
     </section>

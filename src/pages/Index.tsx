@@ -1,57 +1,49 @@
-import { lazy, Suspense } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
-import { SectionSkeleton } from '@/components/SectionSkeleton';
-
-const ServicesSection = lazy(() => import('@/components/ServicesSection').then(m => ({ default: m.ServicesSection })));
-const PortfolioSection = lazy(() => import('@/components/PortfolioSection').then(m => ({ default: m.PortfolioSection })));
-const AboutSection = lazy(() => import('@/components/AboutSection').then(m => ({ default: m.AboutSection })));
-const TestimonialsSection = lazy(() => import('@/components/TestimonialsSection').then(m => ({ default: m.TestimonialsSection })));
-const WhyUsSection = lazy(() => import('@/components/WhyUsSection').then(m => ({ default: m.WhyUsSection })));
-const ProcessSection = lazy(() => import('@/components/ProcessSection').then(m => ({ default: m.ProcessSection })));
-const CTASection = lazy(() => import('@/components/CTASection').then(m => ({ default: m.CTASection })));
-const ContactSection = lazy(() => import('@/components/ContactSection').then(m => ({ default: m.ContactSection })));
-const Footer = lazy(() => import('@/components/Footer').then(m => ({ default: m.Footer })));
+import { ServicesSection } from '@/components/ServicesSection';
+import { WorkSection } from '@/components/WorkSection';
+import { AboutSection } from '@/components/AboutSection';
+import { TeamSection } from '@/components/TeamSection';
+import { SkillsSection } from '@/components/SkillsSection';
+import { ProcessSection } from '@/components/ProcessSection';
+import { ContactSection } from '@/components/ContactSection';
+import { Footer } from '@/components/Footer';
+import { BackgroundMotion } from '@/components/BackgroundMotion';
+import { StatsSection } from '@/components/StatsSection';
+import { WaveDivider } from '@/components/WaveDivider';
+import { ScrollProgress } from '@/components/ScrollProgress';
+import { BackToTop } from '@/components/BackToTop';
+import { CTABanner } from '@/components/CTABanner';
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden">
+    <main className="relative min-h-screen bg-background overflow-x-hidden">
+      <ScrollProgress />
+      <BackToTop />
+      <BackgroundMotion />
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-primary-foreground focus:text-sm focus:font-medium"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background focus:text-sm focus:font-medium"
       >
         Skip to main content
       </a>
+      <div className="relative z-10">
       <Navbar />
       <HeroSection />
+      <WaveDivider />
       <div id="main-content" />
-      <Suspense fallback={<SectionSkeleton />}>
-        <ServicesSection />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <PortfolioSection />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <AboutSection />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <TestimonialsSection />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <WhyUsSection />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <ProcessSection />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <CTASection />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton />}>
-        <ContactSection />
-      </Suspense>
-      <Suspense fallback={<SectionSkeleton lines={3} />}>
-        <Footer />
-      </Suspense>
+      <StatsSection />
+      <ServicesSection />
+      <WorkSection />
+      <AboutSection />
+      <TeamSection />
+      <SkillsSection />
+      <ProcessSection />
+      <CTABanner />
+      <div className="min-h-[5rem] bg-[#f5f5f5] md:min-h-[6rem]" aria-hidden />
+      <ContactSection />
+      <Footer />
+      </div>
     </main>
   );
 };

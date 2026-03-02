@@ -19,7 +19,7 @@ export const services = [
     title: 'Software Development',
     description: 'Custom web and mobile applications built to scale.',
     href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=240&fit=crop',
+    imageUrl: '/assets/t.png',
   },
   {
     title: 'IT Consulting',

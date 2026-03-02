@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type MouseEvent } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { site } from '@/data/site';
@@ -15,32 +15,74 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
+  const scrollToHash = (href: string) => {
+    const hash = href.replace('#', '');
+
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+      return;
+    }
+
+    const target = document.getElementById(hash);
+    if (!target) return;
+
+    const navOffset = 96;
+    const top = target.getBoundingClientRect().top + window.scrollY - navOffset;
+
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    window.history.replaceState(null, '', `#${hash}`);
+  };
+
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string, closeMobileFirst = false) => {
+    if (!href.startsWith('#')) return;
+
+    event.preventDefault();
+
+    if (closeMobileFirst) {
+      setIsMobileOpen(false);
+      window.setTimeout(() => {
+        scrollToHash(href);
+      }, 240);
+      return;
+    }
+
+    scrollToHash(href);
+    setIsMobileOpen(false);
+  };
+
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!window.location.hash) return;
+    scrollToHash(window.location.hash);
+  }, []);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`md:py-2 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/95 shadow-soft-lg backdrop-blur-md'
           : 'bg-white'
       }`}
       aria-label="Main navigation"
     >
-      <div className="flex h-10 items-center justify-center bg-[var(--accent-bar)]">
+      {/* <div className="flex h-10 items-center justify-center bg-[var(--accent-bar)]">
         <p className="text-white font-semibold text-sm md:text-base text-center px-4">
           We build systems that scale — backend, frontend & full-stack.
         </p>
-      </div>
+      </div> */}
 
       <div className="container-narrow flex items-center justify-between h-16 md:h-[4rem]">
         <a
           href="#"
           className="font-display font-bold text-[#2a2a2a] text-lg link-underline"
           aria-label={`${site.name} — Home`}
+          onClick={(event) => handleNavClick(event, '#')}
         >
           {site.name}
         </a>
@@ -51,6 +93,7 @@ export const Navbar = () => {
               key={href}
               href={href}
               className="nav-link relative py-2 text-sm font-medium text-[#2a2a2a] transition-colors hover:text-[var(--accent-bar)]"
+              onClick={(event) => handleNavClick(event, href)}
             >
               {label}
             </a>
@@ -58,7 +101,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="hidden md:block">
-          <a href="#contact" className="rounded-full bg-[#2a2a2a] px-5 py-2.5 text-sm font-medium text-white shadow-soft transition-all hover:bg-[var(--accent-bar)] hover:shadow-[0_4px_20px_rgba(13,148,136,0.35)]">
+          <a href="#contact" className="rounded-full bg-[#2a2a2a] px-5 py-2.5 text-sm font-medium text-white shadow-soft transition-all hover:bg-[var(--accent-bar)] hover:shadow-[0_4px_20px_rgba(13,148,136,0.35)]" onClick={(event) => handleNavClick(event, '#contact')}>
             Get in touch
           </a>
         </div>
@@ -89,12 +132,12 @@ export const Navbar = () => {
                   key={href}
                   href={href}
                   className="py-3 text-[#2a2a2a] font-medium"
-                  onClick={() => setIsMobileOpen(false)}
+                  onClick={(event) => handleNavClick(event, href, true)}
                 >
                   {label}
                 </a>
               ))}
-              <a href="#contact" className="btn-primary mt-4 w-full justify-center" onClick={() => setIsMobileOpen(false)}>
+              <a href="#contact" className="btn-primary mt-4 w-full justify-center" onClick={(event) => handleNavClick(event, '#contact', true)}>
                 Get in touch
               </a>
             </nav>

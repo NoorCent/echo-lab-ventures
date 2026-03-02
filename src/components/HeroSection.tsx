@@ -1,14 +1,14 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { site } from '@/data/site';
-import { HeroBackground } from '@/components/HeroBackground';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { ArrowRight } from "lucide-react";
+import { site } from "@/data/site";
+import { HeroBackground } from "@/components/HeroBackground";
 
 export const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 80]);
   const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0.3]);
@@ -16,7 +16,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[420px] flex-col items-center justify-center overflow-hidden px-[var(--container-x)] pt-[var(--hero-top)] pb-[var(--section-y)] text-center md:min-h-[520px] md:pt-[var(--hero-top-md)] md:pb-[var(--section-y-md)]"
+      className=" relative flex min-h-[420px] flex-col items-center justify-center overflow-hidden px-[var(--container-x)] pt-[var(--hero-top)] pb-[var(--section-y)] text-center md:min-h-[520px] md:pt-[var(--hero-top-md)] md:pb-[var(--section-y-md)]"
       aria-label="Introduction"
     >
       <HeroBackground />
@@ -29,11 +29,16 @@ export const HeroSection = () => {
       >
         <span className="hero-badge mb-4 rounded-full border border-[var(--accent-bar)]/30 bg-[var(--accent-bar)]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--accent-bar)]">
           {site.tagline}
+       
         </span>
         <h1 className="hero_title font-light text-4xl leading-[1.15] tracking-tight text-[#2a2a2a]/70 md:text-5xl md:leading-[1.2] lg:text-6xl lg:leading-[1.15]">
-          <strong className="font-bold text-[#2a2a2a]">Building Products</strong> that set the{' '}
-          <br className="hidden sm:block" />
-          <span className="hero-word-highlight text-gradient-hero font-bold">Standard</span>
+          <strong className="font-bold text-[#2a2a2a]">
+            Building Products
+          </strong>{" "}
+          that set the <br className="hidden sm:block" />
+          <span className="hero-word-highlight text-gradient-hero font-bold">
+            Standard
+          </span>
         </h1>
         <p className="description mx-auto mt-6 max-w-[32rem] text-balance font-light text-lg leading-relaxed text-[#2a2a2a] md:mt-8 md:max-w-[38rem] md:text-base">
           {site.description}

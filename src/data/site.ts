@@ -5,8 +5,8 @@
 
 export const site = {
   name: 'Noorcent',
-  tagline: 'Backend & Full-Stack Engineering',
-  description: 'We build systems that scale. A team of four building APIs, services, and full-stack products with clarity and maintainability at the core.',
+  tagline: ' Built with Clarity. Designed to Scale.',
+  description: 'We design and build digital products that grow with your business  created with clarity, reliability, and long-term sustainability in mind.',
   email: 'hello@noorcent.com',
   logoUrl: '' as string | undefined,
   /** Hero image — replace with your own (e.g. team photo, office, product). */

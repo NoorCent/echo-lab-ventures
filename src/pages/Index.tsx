@@ -33,11 +33,14 @@ const Index = () => {
       <WaveDivider />
       <div id="main-content" />
       <StatsSection />
+      {/* TODO: Implement the detail part here. */}
       <ServicesSection />
       <WorkSection />
       <AboutSection />
       <TeamSection />
       <SkillsSection />
+      to 
+      {/* TODO: Implement the detail part here. */}
       <ProcessSection />
       <CTABanner />
       <div className="min-h-[5rem] bg-[#f5f5f5] md:min-h-[6rem]" aria-hidden />

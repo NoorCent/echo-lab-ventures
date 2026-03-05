@@ -18,24 +18,56 @@ export const services = [
   {
     title: 'Software Development',
     description: 'Custom web and mobile applications built to scale.',
+    detailedDescription:
+      'We design and engineer robust, scalable software tailored to your unique business needs. From responsive web platforms to cross-platform mobile apps, our full-cycle development process covers ideation, prototyping, development, testing, and deployment — ensuring a product that performs flawlessly from day one.',
+    highlights: [
+      'Full-stack web & mobile development',
+      'Agile sprints with transparent delivery',
+      'CI/CD pipelines & automated testing',
+      'Post-launch support & iteration',
+    ],
     href: '#',
     imageUrl: '/assets/t.png',
   },
   {
     title: 'IT Consulting',
     description: 'Strategy, architecture, and technology guidance.',
+    detailedDescription:
+      'Our consultants partner with your leadership team to align technology decisions with business objectives. We evaluate your current stack, identify bottlenecks, and craft a clear technology roadmap — helping you reduce costs, mitigate risk, and accelerate digital transformation.',
+    highlights: [
+      'Technology audits & gap analysis',
+      'Digital transformation roadmaps',
+      'Vendor evaluation & selection',
+      'Team augmentation & mentorship',
+    ],
     href: '#',
     imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=240&fit=crop',
   },
   {
     title: 'System Design & Architecture',
     description: 'APIs, services, and infrastructure that last.',
+    detailedDescription:
+      'We architect resilient, high-performance systems designed to scale with your growth. From microservices and event-driven architectures to cloud-native infrastructure, we ensure your technical foundation is secure, maintainable, and ready for whatever comes next.',
+    highlights: [
+      'Microservices & API design',
+      'Cloud-native infrastructure (AWS, GCP)',
+      'Database design & optimization',
+      'Security-first architecture patterns',
+    ],
     href: '#',
     imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=240&fit=crop',
   },
   {
     title: 'Data Science & ML',
     description: 'Data pipelines, models, and actionable insights.',
+    detailedDescription:
+      'We turn raw data into competitive advantage. Our data engineers and ML specialists build end-to-end pipelines — from ingestion and cleaning to model training and deployment — delivering predictive analytics and intelligent automation that drive smarter business decisions.',
+    highlights: [
+      'ETL pipelines & data warehousing',
+      'Predictive modeling & forecasting',
+      'Natural language processing',
+      'Real-time dashboards & reporting',
+    ],
     href: '#',
     imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=240&fit=crop',
   },

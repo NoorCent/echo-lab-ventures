@@ -78,10 +78,10 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="relative z-10 flex max-h-[95vh] w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl md:max-w-3xl md:rounded-2xl"
+                        className="relative z-10 flex max-h-[95vh] w-full flex-col overflow-hidden rounded-t-2xl bg-white dark:bg-[#1a1a1a] shadow-2xl md:max-w-3xl md:rounded-2xl"
                     >
                         {/* Hero image */}
-                        <div className="relative h-48 w-full shrink-0 overflow-hidden bg-[#f5f5f5] sm:h-56 md:h-64">
+                        <div className="relative h-48 w-full shrink-0 overflow-hidden bg-[#f5f5f5] dark:bg-white/5 sm:h-56 md:h-64">
                             <img
                                 src={project.imageUrl}
                                 alt=""
@@ -93,7 +93,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             {/* Close button */}
                             <button
                                 onClick={onClose}
-                                className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-[#2a2a2a] shadow-md backdrop-blur-sm transition-colors hover:bg-white cursor-pointer"
+                                className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 dark:bg-white/10 text-[#2a2a2a] dark:text-gray-100 shadow-md backdrop-blur-sm transition-colors hover:bg-white dark:hover:bg-white/20 cursor-pointer"
                                 aria-label="Close"
                             >
                                 <X className="h-4 w-4" />
@@ -115,17 +115,17 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             <div className="flex flex-col gap-6 md:flex-row md:gap-10">
                                 {/* Description */}
                                 <div className="md:w-3/5">
-                                    <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#999]">
+                                    <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#999] dark:text-gray-400">
                                         Overview
                                     </h3>
-                                    <p className="text-sm leading-relaxed text-[#555] md:text-base">
+                                    <p className="text-sm leading-relaxed text-[#555] dark:text-gray-200 md:text-base">
                                         {project.detailedDescription}
                                     </p>
                                 </div>
 
                                 {/* Features */}
                                 <div className="md:w-2/5">
-                                    <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#999]">
+                                    <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#999] dark:text-gray-400">
                                         Key Features
                                     </h3>
                                     <ul className="space-y-2.5">
@@ -135,7 +135,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                                 className="flex items-start gap-2.5 text-sm"
                                             >
                                                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                                                <span className="text-[#444]">{feature}</span>
+                                                <span className="text-[#444] dark:text-gray-200">{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -143,7 +143,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             </div>
 
                             {/* Tech stack badges + View Project link */}
-                            <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-[#e8e8e8] pt-5">
+                            <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-[#e8e8e8] dark:border-white/10 pt-5">
                                 <div className="flex flex-wrap gap-2">
                                     {project.stack.split(', ').map((tech) => (
                                         <span

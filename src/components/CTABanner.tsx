@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function CTABanner() {
   return (
-    <section className="relative overflow-hidden border-t border-[#e8e8e8] bg-[#2a2a2a] py-16 md:py-20" aria-label="Call to action">
+    <section className="relative overflow-hidden border-t border-[#e8e8e8] dark:border-white/10 bg-[#2a2a2a] dark:bg-[#1a1a1a] py-16 md:py-20" aria-label="Call to action">
       <div className="absolute inset-0 bg-cta-mesh opacity-90" aria-hidden />
       <div className="container-narrow relative flex flex-col items-center text-center">
         <motion.h2
@@ -32,7 +32,7 @@ export function CTABanner() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-bar)] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:shadow-[0_8px_28px_rgba(13,148,136,0.45)] active:scale-[0.98]"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-bar)] dark:bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 dark:hover:bg-[#3b82f6] hover:shadow-[0_8px_28px_rgba(13,148,136,0.45)] dark:hover:shadow-[0_8px_28px_rgba(59,130,246,0.45)] active:scale-[0.98]"
           >
             Start a project
             <ArrowRight className="h-4 w-4" />

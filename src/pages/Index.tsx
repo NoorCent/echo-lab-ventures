@@ -6,6 +6,7 @@ import { AboutSection } from '@/components/AboutSection';
 import { TeamSection } from '@/components/TeamSection';
 import { SkillsSection } from '@/components/SkillsSection';
 import { ProcessSection } from '@/components/ProcessSection';
+import { TestimonialSection } from '@/components/TestimonialSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { BackgroundMotion } from '@/components/BackgroundMotion';
@@ -33,17 +34,15 @@ const Index = () => {
       <WaveDivider />
       <div id="main-content" />
       <StatsSection />
-      {/* TODO: Implement the detail part here. */}
       <ServicesSection />
       <WorkSection />
       <AboutSection />
       <TeamSection />
       <SkillsSection />
-      to 
-      {/* TODO: Implement the detail part here. */}
       <ProcessSection />
+      <TestimonialSection />
       <CTABanner />
-      <div className="min-h-[5rem] bg-[#f5f5f5] md:min-h-[6rem]" aria-hidden />
+      <div className="min-h-[5rem] bg-[#f5f5f5] dark:bg-[#0f0f0f] md:min-h-[6rem]" aria-hidden />
       <ContactSection />
       <Footer />
       </div>

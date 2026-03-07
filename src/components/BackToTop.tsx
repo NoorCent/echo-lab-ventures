@@ -21,7 +21,7 @@ export function BackToTop() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 12, scale: 0.9 }}
           transition={{ duration: 0.2 }}
-          className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#2a2a2a] text-white shadow-lg transition-all hover:bg-[var(--accent-bar)] hover:shadow-[0_8px_24px_rgba(13,148,136,0.4)] active:scale-95 md:bottom-8 md:right-8 md:h-14 md:w-14"
+          className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#2a2a2a] dark:bg-[#2563eb] text-white shadow-lg transition-all hover:bg-[var(--accent-bar)] dark:hover:bg-[#3b82f6] hover:shadow-[0_8px_24px_rgba(13,148,136,0.4)] dark:hover:shadow-[0_8px_24px_rgba(59,130,246,0.4)] active:scale-95 md:bottom-8 md:right-8 md:h-14 md:w-14"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });

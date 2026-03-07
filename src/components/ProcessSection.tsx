@@ -11,7 +11,7 @@ const steps = [
 
 export const ProcessSection = () => {
   return (
-    <section id="process" className="section-padding relative overflow-hidden border-t border-[#e8e8e8] bg-white" aria-labelledby="process-heading">
+    <section id="process" className="section-padding relative overflow-hidden border-t border-[#e8e8e8] dark:border-white/10 bg-white dark:bg-[#0f0f0f]" aria-labelledby="process-heading">
       <div className="container-narrow relative">
         <SectionHeader
           id="process-heading"
@@ -41,7 +41,7 @@ export const ProcessSection = () => {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="process-step card-lift group relative z-10 rounded-2xl border border-[#e8e8e8] bg-white p-6 shadow-soft hover:border-[var(--accent-bar)]/30 hover:shadow-card-hover"
+                className="process-step card-lift group relative z-10 rounded-2xl border border-[#e8e8e8] dark:border-white/10 bg-white dark:bg-white/5 p-6 shadow-soft hover:border-[var(--accent-bar)]/30 hover:shadow-card-hover"
               >
                 <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--accent-bar)] text-sm font-bold text-white shadow-[0_4px_14px_rgba(13,148,136,0.35)]">
                   {step.number}
@@ -49,8 +49,8 @@ export const ProcessSection = () => {
                 <span className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-[var(--accent-bar)] transition-colors group-hover:bg-primary/20 group-hover:scale-105">
                   <Icon className="h-6 w-6" />
                 </span>
-                <h3 className="font-display text-lg font-semibold text-[#2a2a2a]">{step.title}</h3>
-                <p className="mt-2 text-left text-sm leading-[1.6] text-[#2a2a2a]/70 text-justify hyphens-auto">{step.description}</p>
+                <h3 className="font-display text-lg font-semibold text-[#2a2a2a] dark:text-white">{step.title}</h3>
+                <p className="mt-2 text-left text-sm leading-[1.6] text-[#2a2a2a]/70 dark:text-gray-200 text-justify hyphens-auto">{step.description}</p>
               </motion.div>
             );
           })}

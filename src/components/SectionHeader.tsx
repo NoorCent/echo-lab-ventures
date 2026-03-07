@@ -17,12 +17,12 @@ export function SectionHeader({ title, subtitle, label, className = '', id }: Se
             {label}
           </span>
         )}
-        <h2 id={id} className="section-title font-display text-3xl font-bold tracking-tight text-[#2a2a2a] md:text-4xl md:leading-[1.2]">
+        <h2 id={id} className="section-title font-display text-3xl font-bold tracking-tight text-[#2a2a2a] dark:text-white md:text-4xl md:leading-[1.2]">
           {title}
         </h2>
       </header>
       {subtitle && (
-        <div className="section-subtitle min-w-0 flex-1 text-left text-base leading-[1.7] text-[#2a2a2a]/80 md:max-w-xl md:pt-1.5 [&_p]:m-0 [&_p]:text-justify [&_p]:hyphens-auto">
+        <div className="section-subtitle min-w-0 flex-1 text-left text-base leading-[1.7] text-[#2a2a2a]/80 dark:text-gray-200 md:max-w-xl md:pt-1.5 [&_p]:m-0 [&_p]:text-justify [&_p]:hyphens-auto">
           {subtitle}
         </div>
       )}

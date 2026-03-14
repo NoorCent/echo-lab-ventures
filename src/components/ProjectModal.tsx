@@ -33,7 +33,7 @@ const modal = {
 };
 
 /**
- * Project detail modal — slides up with backdrop blur.
+ * Project detail modal   slides up with backdrop blur.
  * Full-screen sheet on mobile, centered card on desktop.
  */
 export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {

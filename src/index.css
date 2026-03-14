@@ -1,4 +1,4 @@
-/* Noorcent — Inter + Outfit, teal accent */
+/* Noorcent   Inter + Outfit, teal accent */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
@@ -34,7 +34,7 @@
     --primary-foreground: 0 0% 100%;
     --primary-soft: 173 58% 39% / 0.14;
 
-    /* Accent bar (section title & hero underline) — our style: teal, no skew */
+    /* Accent bar (section title & hero underline)   our style: teal, no skew */
     --accent-bar: #0d9488;
 
     --dark: 0 0% 16%;

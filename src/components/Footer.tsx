@@ -21,8 +21,12 @@ export const Footer = () => {
       <div className="container-narrow">
         <div className="footer_top mb-10 flex flex-col gap-8 md:mb-12 md:flex-row md:items-start md:justify-between">
           <div className="footer_logo">
-            <a href="#" className="font-display text-xl font-bold text-[#2a2a2a] dark:text-white">
-              {site.name}
+            <a href="#">
+              <img
+                src={site.logoUrl}
+                alt={site.name}
+                className="h-10 w-auto object-contain"
+              />
             </a>
             <div className="footer_social mt-4">
               <span className="mb-2 block text-sm font-medium text-[#2a2a2a] dark:text-gray-200">Follow Us:</span>

@@ -74,7 +74,7 @@ const detailContent = (project: Project) => (
 );
 
 /**
- * Projects section — click any project to make it the featured one (moves to top, expands with detail).
+ * Projects section   click any project to make it the featured one (moves to top, expands with detail).
  * Layout animation swaps the clicked card into the featured slot.
  */
 export const WorkSection = () => {
@@ -123,7 +123,7 @@ export const WorkSection = () => {
           layout
           transition={layoutTransition}
         >
-          {/* Featured project — horizontal card, spans 2 cols; always shows expanded detail */}
+          {/* Featured project   horizontal card, spans 2 cols; always shows expanded detail */}
           <motion.article
             key={featured.name}
             layout
@@ -175,13 +175,13 @@ export const WorkSection = () => {
               </div>
             </button>
 
-            {/* Expanded detail — always visible for featured */}
+            {/* Expanded detail   always visible for featured */}
             <div className="border-t border-[#e8e8e8] dark:border-white/10">
               {detailContent(featured)}
             </div>
           </motion.article>
 
-          {/* Rest — overlapping "sticker" cards; click to make this project the featured one */}
+          {/* Rest   overlapping "sticker" cards; click to make this project the featured one */}
           {rest.map((project) => {
             const originalIndex = projects.findIndex((p) => p.name === project.name);
             const num = String(originalIndex + 1).padStart(2, '0');

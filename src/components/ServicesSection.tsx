@@ -43,7 +43,7 @@ const layoutTransition = {
 };
 
 /**
- * Services section — on desktop/md when "Learn more" is clicked, the selected card
+ * Services section   on desktop/md when "Learn more" is clicked, the selected card
  * moves to the top row (full width + detail) and the other three animate to a second row below.
  */
 export const ServicesSection = () => {

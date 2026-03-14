@@ -1,5 +1,5 @@
 /**
- * Subtle moving orbs in the background — inspiration only, not a clone of any reference.
+ * Subtle moving orbs in the background   inspiration only, not a clone of any reference.
  * Kept minimal so they don’t distract from content.
  */
 export function BackgroundMotion() {
@@ -8,7 +8,7 @@ export function BackgroundMotion() {
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
       aria-hidden
     >
-      {/* Soft orbs — teal accent */}
+      {/* Soft orbs   teal accent */}
       <div
         className="absolute -top-32 right-0 h-[420px] w-[420px] rounded-full opacity-[0.1] blur-3xl animate-orb-drift"
         style={{

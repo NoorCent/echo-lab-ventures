@@ -53,7 +53,7 @@ export const TestimonialSection = () => {
           id="testimonials-heading"
           label="Kind words"
           title="What our clients say"
-          subtitle={<p>We're proud of the products we build—and so are the people we build them for.</p>}
+          subtitle={<p>We're proud of the products we build and so are the people we build them for.</p>}
         />
 
         <div className="mt-10 md:mt-14 relative">
@@ -77,7 +77,7 @@ export const TestimonialSection = () => {
                 <footer className="mt-6 flex flex-wrap items-center gap-2 md:mt-8">
                   <cite className="not-italic">
                     <span className="font-display font-semibold text-[#2a2a2a] dark:text-white">{t.author}</span>
-                    <span className="text-[#2a2a2a]/60 dark:text-gray-300"> — {t.role}</span>
+                    <span className="text-[#2a2a2a]/60 dark:text-gray-300">   {t.role}</span>
                   </cite>
                   {t.projectHref && t.projectHref !== '#' && (
                     <a

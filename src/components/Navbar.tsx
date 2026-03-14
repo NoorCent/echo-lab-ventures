@@ -73,18 +73,25 @@ export const Navbar = () => {
     >
       {/* <div className="flex h-10 items-center justify-center bg-[var(--accent-bar)]">
         <p className="text-white font-semibold text-sm md:text-base text-center px-4">
-          We build systems that scale — backend, frontend & full-stack.
+          We build systems that scale   backend, frontend & full-stack.
         </p>
       </div> */}
 
       <div className="container-narrow flex items-center justify-between h-16 md:h-[4rem]">
         <a
           href="#"
-          className="font-display font-bold text-[#2a2a2a] dark:text-white text-lg link-underline"
-          aria-label={`${site.name} — Home`}
+          aria-label={`${site.name}   Home`}
           onClick={(event) => handleNavClick(event, '#')}
+          className="overflow-hidden"
         >
-          {site.name}
+          <motion.img
+            src={site.logoUrl}
+            alt={site.name}
+            className="h-20 w-auto object-contain block"
+            initial={{ x: '-110%' }}
+            animate={{ x: 0 }}
+            transition={{ type: 'spring', stiffness: 130, damping: 18, mass: 1.2, delay: 0.1 }}
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8" aria-label="Primary">

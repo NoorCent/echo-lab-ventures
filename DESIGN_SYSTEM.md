@@ -1,4 +1,4 @@
-# NexusForge Portfolio — Design System
+# NexusForge Portfolio   Design System
 
 Dark-first, minimal, high-end developer portfolio. Goal: recruiters pause 10 seconds. Feel: **elite, intentional, structured, calm but powerful.**
 
@@ -20,14 +20,14 @@ Dark-first, minimal, high-end developer portfolio. Goal: recruiters pause 10 sec
 | **Accent hover** | `#d4af37` | Hover state for accent |
 | **Accent soft** | `rgba(201, 162, 39, 0.08)` | Subtle backgrounds, selection |
 
-Single accent (gold) — no rainbow. Confident and premium.
+Single accent (gold)   no rainbow. Confident and premium.
 
 ---
 
 ## Typography (Google Fonts)
 
-- **Headings:** [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) — 600 (Semibold), 700 (Bold). Structured, modern, not playful.
-- **Body:** [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3) — 400, 500, 600. Neutral, readable, professional.
+- **Headings:** [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)   600 (Semibold), 700 (Bold). Structured, modern, not playful.
+- **Body:** [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)   400, 500, 600. Neutral, readable, professional.
 
 Scale (Tailwind-style):
 - **Display:** 3.5rem–4rem (hero name/title)
@@ -78,11 +78,11 @@ Scale (Tailwind-style):
 
 ### 4. Skills (Stack)
 - Section label + title: “Stack” or “Technologies.”
-- **Layout:** Grouped by category: Backend, Frontend, Data, DevOps, etc. Pills or simple text list. No childish icons — text only or very minimal icons. Muted text, accent on category labels.
+- **Layout:** Grouped by category: Backend, Frontend, Data, DevOps, etc. Pills or simple text list. No childish icons   text only or very minimal icons. Muted text, accent on category labels.
 
 ### 5. Process
 - Section label + title: “Process” or “How we work.”
-- **Layout:** Numbered steps (01, 02, 03, 04). Minimal: title + one line each. Vertical timeline with thin line or simple list. No big icons — numbers or minimal dots.
+- **Layout:** Numbered steps (01, 02, 03, 04). Minimal: title + one line each. Vertical timeline with thin line or simple list. No big icons   numbers or minimal dots.
 
 ### 6. Contact
 - Section label + title: “Contact” / “Get in touch.”
@@ -99,7 +99,7 @@ Scale (Tailwind-style):
 1. **Focus visible:** All interactive elements have 2px outline in accent when focused (keyboard). No outline: none without replacement.
 2. **Selection:** `::selection` background `rgba(201, 162, 39, 0.2)`, text color inherit.
 3. **Smooth scroll:** `scroll-behavior: smooth` for anchor links.
-4. **Reduced motion:** `@media (prefers-reduced-motion: reduce)` — animations duration 0.01ms or opacity-only.
+4. **Reduced motion:** `@media (prefers-reduced-motion: reduce)`   animations duration 0.01ms or opacity-only.
 5. **Small caps labels:** Section labels in uppercase, letter-spacing 0.08em–0.1em, font-weight 600.
 6. **Consistent radius:** 8px (or 6px) for cards and buttons. No pills unless for tags.
 7. **Borders:** 1px only. No thick borders.
@@ -111,9 +111,9 @@ Scale (Tailwind-style):
 
 ## File / Component Map
 
-- `index.css` — CSS variables (hex → HSL where needed for Tailwind), base styles, selection, focus, reduced-motion.
-- `tailwind.config.ts` — Colors, fonts, spacing, keyframes (fade-up, etc.).
-- `Index.tsx` — Single page: Navbar, Hero, Work, About, Skills, Process, Contact, Footer.
+- `index.css`   CSS variables (hex → HSL where needed for Tailwind), base styles, selection, focus, reduced-motion.
+- `tailwind.config.ts`   Colors, fonts, spacing, keyframes (fade-up, etc.).
+- `Index.tsx`   Single page: Navbar, Hero, Work, About, Skills, Process, Contact, Footer.
 - Components: `Navbar`, `Hero`, `WorkSection`, `AboutSection`, `SkillsSection`, `ProcessSection`, `ContactSection`, `Footer`.
 
 Old sections removed: Testimonials, WhyUs, CTASection (merged into Contact). Services merged into “Work” or “Stack” as needed.

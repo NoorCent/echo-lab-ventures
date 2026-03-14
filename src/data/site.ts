@@ -1,5 +1,5 @@
 /**
- * Site data — company info, team, services, and projects.
+ * Site data   company info, team, services, and projects.
  */
 
 export const site = {
@@ -7,7 +7,8 @@ export const site = {
   tagline: 'Web, Mobile & AI Solutions',
   description: 'We build web and mobile applications that scale. From full-stack products to AI and ML solutions, we deliver clear, maintainable software with your business goals in mind.',
   email: 'nebiyumusbah378@gmail.com',
-  logoUrl: '' as string | undefined,
+  logoUrl: '/logo.svg',
+  logoMinimalUrl: '/logo_minimal.png',
   phone: '+251 90 802 4092',
   address: 'Addis Ababa, Ethiopia',
   heroImageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
@@ -113,7 +114,7 @@ export const team = [
 export const testimonials = [
   {
     quote:
-      "They built our Koket Bakery platform from the ground up. We can now take orders online and our customers track their cakes from order to delivery—exactly what we needed. Professional, responsive, and the result speaks for itself. I'd work with them again without hesitation.",
+      "They built our Koket Bakery platform from the ground up. We can now take orders online and our customers track their cakes from order to delivery exactly what we needed. Professional, responsive, and the result speaks for itself. I'd work with them again without hesitation.",
     author: 'Hamza',
     role: 'Owner, Koket Bakery',
     project: 'Koket Bakery',
@@ -129,7 +130,7 @@ export const testimonials = [
   },
   {
     quote:
-      "We needed a mobile app that could work offline in the field. They nailed it—our team now captures data anywhere and everything syncs when they're back online. Game changer for our operations.",
+      "We needed a mobile app that could work offline in the field. They nailed it our team now captures data anywhere and everything syncs when they're back online. Game changer for our operations.",
     author: 'David K.',
     role: 'Field Manager',
     project: 'Field App',
@@ -137,7 +138,7 @@ export const testimonials = [
   },
 ] as const;
 
-/** Projects: real and placeholder. */
+/** Projects. */
 export const projects = [
   {
     name: 'Koket Bakery',
@@ -156,163 +157,53 @@ export const projects = [
     placeholderColor: 'from-primary/20 to-primary/5',
   },
   {
-    name: 'Project Two',
-    context: 'A scalable web platform with dashboard and reporting.',
+    name: 'Synth Studio',
+    context: 'Use and share your data freely   without putting real people at risk.',
     detailedDescription:
-      'A full-stack web application with role-based access, dashboards, and reporting. Built with modern tools for performance and maintainability.',
+      'Synth Studio lets teams work with realistic-looking data that behaves like the real thing, without containing any actual personal information. Upload your dataset, and it generates a safe version you can share, test with, or hand off to partners   no real names, emails, or sensitive details ever leave your hands.',
     features: [
-      'User authentication and roles',
-      'Dashboard and analytics',
-      'API integration and data sync',
-      'Responsive UI',
+      'Generates fake-but-realistic data that mirrors your real dataset',
+      'Automatically spots and flags personal information before anything is processed',
+      'Works without any coding   upload a file and get results',
+      'Shows you how closely the safe data matches the original',
+      'Produces compliance reports ready for audits',
+      'Free to use and open source   no sign-up required to try it',
     ],
-    stack: 'React, Node.js, PostgreSQL',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
+    stack: 'Python, React, CTGAN, TVAE, Differential Privacy',
+    href: 'https://www.synthdata.studio/',
+    imageUrl: '/SynthStudio.png',
+    placeholderColor: 'from-primary/20 to-primary/5',
   },
   {
-    name: 'Project Three',
-    context: 'Mobile-first app for field teams and real-time updates.',
+    name: 'Guzo',
+    context: 'Explore Ethiopia\'s landscapes, culture, and history through a stunning travel guide.',
     detailedDescription:
-      'A cross-platform mobile and web app that helps teams capture data in the field and keep stakeholders updated in real time.',
+      'Guzo   meaning "journey" in Amharic   is a travel website built to showcase the beauty of Ethiopia. From ancient ruins to mountain highlands and vibrant city life, it gives visitors a rich, visual introduction to the country and inspires them to start planning their own trip.',
     features: [
-      'Offline-capable forms',
-      'Real-time sync and notifications',
-      'Map and location features',
-      'Admin and reporting views',
+      'Beautiful destination pages with rich photography',
+      'Cultural and historical context for each location',
+      'Smooth, cinematic transitions as you browse',
+      'Fully responsive   works great on phone, tablet, or desktop',
     ],
-    stack: 'React Native, Node.js, MongoDB',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
+    stack: 'React, TypeScript, Tailwind CSS, Framer Motion',
+    href: 'https://guzo-cyan.vercel.app/',
+    imageUrl: '/Guzo.png',
+    placeholderColor: 'from-primary/20 to-primary/5',
   },
   {
-    name: 'Project Four',
-    context: 'Data and analytics platform for business insights.',
+    name: 'Æther & Essence',
+    context: 'A luxury fragrance shop that helps you discover your perfect scent online.',
     detailedDescription:
-      'An analytics and reporting platform that connects to your data sources and delivers dashboards, KPIs, and exportable reports.',
+      'Æther & Essence is an online boutique for high-end fragrances. It walks you through finding a scent that matches your mood and personality, lets you save favourites, request samples before committing to a full bottle, and keep a personal journal of everything you\'ve tried   all wrapped in an elegant, immersive experience.',
     features: [
-      'Data connectors and ETL',
-      'Custom dashboards and charts',
-      'Scheduled reports and alerts',
-      'Role-based access control',
+      'Personalized scent finder based on your mood and preferences',
+      'Full shopping experience with cart and wishlist',
+      'Sample request program   try before you buy',
+      'Personal scent journal to track what you\'ve loved',
     ],
-    stack: 'React, Node.js, PostgreSQL',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
-  },
-  {
-    name: 'Inventory Manager',
-    context: 'Stock tracking and order management for small businesses.',
-    detailedDescription:
-      'A lightweight inventory and order management system that helps shops track stock levels, reorder points, and sales. Integrates with barcode scanning and basic reporting.',
-    features: [
-      'Stock levels and reorder alerts',
-      'Barcode scanning support',
-      'Sales and purchase history',
-      'Simple reporting and export',
-    ],
-    stack: 'Next.js, TypeScript, SQLite',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
-  },
-  {
-    name: 'Booking Hub',
-    context: 'Appointments and reservations for services and venues.',
-    detailedDescription:
-      'A booking platform that lets service providers manage availability and lets customers book slots. Supports recurring appointments and email reminders.',
-    features: [
-      'Calendar and availability management',
-      'Online booking and payments',
-      'Email and SMS reminders',
-      'Admin dashboard',
-    ],
-    stack: 'React, Node.js, Stripe, PostgreSQL',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
-  },
-  {
-    name: 'Community Forum',
-    context: 'Moderated discussion boards and user-generated content.',
-    detailedDescription:
-      'A forum and community platform with threads, replies, upvotes, and moderation tools. Built for engagement and easy content discovery.',
-    features: [
-      'Threads, replies, and nested comments',
-      'Upvotes and sorting',
-      'Moderation and reporting',
-      'User profiles and notifications',
-    ],
-    stack: 'Next.js, Node.js, MongoDB, Redis',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
-  },
-  {
-    name: 'Delivery Tracker',
-    context: 'Real-time delivery tracking for logistics and last-mile.',
-    detailedDescription:
-      'A driver and customer app for delivery companies. Drivers update status; customers see live tracking and estimated arrival.',
-    features: [
-      'Live location and ETA',
-      'Status updates and proof of delivery',
-      'Driver and customer apps',
-      'Dispatch and route view',
-    ],
-    stack: 'React Native, Node.js, Mapbox',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
-  },
-  {
-    name: 'Learning Portal',
-    context: 'Online courses, progress tracking, and certificates.',
-    detailedDescription:
-      'An LMS for creating and selling courses. Instructors upload content; learners track progress and earn certificates on completion.',
-    features: [
-      'Video and quiz content',
-      'Progress and completion tracking',
-      'Certificates and badges',
-      'Payments and subscriptions',
-    ],
-    stack: 'React, Node.js, Stripe, PostgreSQL',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
-  },
-  {
-    name: 'HR Onboarding',
-    context: 'New hire onboarding, tasks, and document collection.',
-    detailedDescription:
-      'Streamlined onboarding for new employees: checklists, document uploads, e-signatures, and team introductions—all in one place.',
-    features: [
-      'Onboarding checklists',
-      'Document upload and e-sign',
-      'Team intro and org chart',
-      'HR analytics',
-    ],
-    stack: 'React, Node.js, AWS S3',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
-  },
-  {
-    name: 'Event Ticketing',
-    context: 'Sell tickets and manage check-in for events.',
-    detailedDescription:
-      'Event organisers create events and sell tickets; attendees get e-tickets and QR codes for check-in at the venue.',
-    features: [
-      'Event creation and ticketing',
-      'QR check-in and scanning',
-      'Sales and capacity limits',
-      'Attendee list and analytics',
-    ],
-    stack: 'Next.js, Node.js, Stripe',
-    href: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop',
-    placeholderColor: 'from-primary/15 to-primary/5',
+    stack: 'React, TypeScript, Tailwind CSS, Framer Motion',
+    href: 'https://perfume-store-silk.vercel.app/',
+    imageUrl: '/perfume.png',
+    placeholderColor: 'from-primary/20 to-primary/5',
   },
 ] as const;

@@ -13,7 +13,7 @@ export function HeroBackground() {
       <div className="absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-[#e8e8e8] dark:bg-[#60a5fa]/10 animate-hero-shape-1 opacity-60 dark:opacity-80" />
       <div className="absolute right-0 top-1/3 h-[28rem] w-[28rem] rounded-full bg-[#ebebeb] dark:bg-[#2563eb]/10 animate-hero-shape-2 opacity-50 dark:opacity-70" />
       <div className="absolute bottom-1/4 left-1/3 h-72 w-72 rounded-full bg-[#e5e5e5] dark:bg-[#60a5fa]/8 animate-hero-shape-3 opacity-55 dark:opacity-60" />
-      {/* Accent glow — teal in light, blue in dark */}
+      {/* Accent glow   teal in light, blue in dark */}
       <div
         className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.06] blur-3xl animate-pulse-slow dark:opacity-[0.14] dark:blur-[100px]"
         style={{ background: 'radial-gradient(circle, #0d9488 0%, transparent 70%)' }}

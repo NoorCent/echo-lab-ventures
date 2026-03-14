@@ -53,7 +53,7 @@ export const AboutSection = () => {
             {site.description} We are a team of four based in Addis Ababa.
           </p>
 
-          {/* Focus areas — compact row with teal accent */}
+          {/* Focus areas   compact row with teal accent */}
           <div className="mt-10 border-t border-[#eee] pt-8">
             <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-[var(--accent-bar)]">
               What we focus on

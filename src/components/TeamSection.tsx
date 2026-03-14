@@ -14,7 +14,7 @@ export const TeamSection = () => {
           id="team-heading"
           label="Meet us"
           title="Team"
-          subtitle={<p>The people behind Noorcent.</p>}
+          subtitle={<p>The people behind Rhizan.</p>}
         />
 
         <motion.div

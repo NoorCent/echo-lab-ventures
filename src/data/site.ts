@@ -3,7 +3,7 @@
  */
 
 export const site = {
-  name: 'Noorcent',
+  name: 'Rhizan',
   tagline: 'Web, Mobile & AI Solutions',
   description: 'We build web and mobile applications that scale. From full-stack products to AI and ML solutions, we deliver clear, maintainable software with your business goals in mind.',
   email: 'nebiyumusbah378@gmail.com',
@@ -119,22 +119,6 @@ export const testimonials = [
     role: 'Owner, Koket Bakery',
     project: 'Koket Bakery',
     projectHref: 'https://koket-bakery.com/',
-  },
-  {
-    quote:
-      "The team delivered our dashboard on time and the quality exceeded expectations. Clear communication throughout and they really understood our workflow. Highly recommend for anyone needing a solid web application.",
-    author: 'Sarah M.',
-    role: 'Operations Lead',
-    project: 'Analytics Platform',
-    projectHref: '#',
-  },
-  {
-    quote:
-      "We needed a mobile app that could work offline in the field. They nailed it our team now captures data anywhere and everything syncs when they're back online. Game changer for our operations.",
-    author: 'David K.',
-    role: 'Field Manager',
-    project: 'Field App',
-    projectHref: '#',
   },
 ] as const;
 

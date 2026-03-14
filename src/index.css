@@ -1,4 +1,4 @@
-/* Noorcent   Inter + Outfit, teal accent */
+/* Rhizan   Inter + Outfit, teal accent */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
@@ -28,7 +28,7 @@
     --muted-foreground: 0 0% 45%;
     --subtle-foreground: 0 0% 55%;
 
-    /* Noorcent accent: teal */
+    /* Rhizan accent: teal */
     --primary: 173 58% 39%;                  /* #0d9488 */
     --primary-hover: 174 61% 35%;            /* darker teal */
     --primary-foreground: 0 0% 100%;

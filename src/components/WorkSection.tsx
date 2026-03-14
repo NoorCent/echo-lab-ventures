@@ -108,7 +108,7 @@ export const WorkSection = () => {
           title="Projects"
           subtitle={
             <p>
-              At Noorcent, our products empower businesses with innovative
+              At Rhizan, our products empower businesses with innovative
               software solutions designed to enhance operational efficiency.
             </p>
           }

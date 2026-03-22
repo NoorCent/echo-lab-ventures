@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- ===== Robot head (central) ===== -->
+  <rect x="110" y="55" width="80" height="65" rx="14"/>
+  <!-- Antenna -->
+  <line x1="150" y1="55" x2="150" y2="38"/>
+  <circle cx="150" cy="32" r="6"/>
+  <!-- Signal waves from antenna -->
+  <path d="M138 24 Q150 14, 162 24" fill="none" stroke-opacity="0.3"/>
+  <path d="M132 18 Q150 5, 168 18" fill="none" stroke-opacity="0.15"/>
+  <!-- Eyes -->
+  <rect x="124" y="72" width="18" height="16" rx="4"/>
+  <circle cx="133" cy="80" r="4" fill="#1a1a1a" opacity="0.4" stroke="none"/>
+  <rect x="156" y="72" width="18" height="16" rx="4"/>
+  <circle cx="165" cy="80" r="4" fill="#1a1a1a" opacity="0.4" stroke="none"/>
+  <!-- Mouth -->
+  <line x1="132" y1="100" x2="166" y2="100" stroke-opacity="0.5"/>
+  <line x1="132" y1="105" x2="158" y2="105" stroke-opacity="0.3"/>
+  <!-- Ear panels -->
+  <rect x="96" y="68" width="14" height="24" rx="5"/>
+  <rect x="190" y="68" width="14" height="24" rx="5"/>
+
+  <!-- ===== Robot body ===== -->
+  <line x1="135" y1="120" x2="135" y2="140"/>
+  <line x1="165" y1="120" x2="165" y2="140"/>
+  <rect x="118" y="140" width="64" height="42" rx="8"/>
+  <!-- Body circuit lines -->
+  <circle cx="140" cy="160" r="7"/>
+  <circle cx="160" cy="160" r="7"/>
+  <line x1="147" y1="160" x2="153" y2="160"/>
+  <!-- Body buttons -->
+  <circle cx="150" cy="173" r="3" fill="#1a1a1a" opacity="0.15" stroke="#1a1a1a"/>
+
+  <!-- ===== Gear (top left) ===== -->
+  <circle cx="48" cy="65" r="18"/>
+  <circle cx="48" cy="65" r="8"/>
+  <line x1="48" y1="43" x2="48" y2="47"/>
+  <line x1="48" y1="83" x2="48" y2="87"/>
+  <line x1="26" y1="65" x2="30" y2="65"/>
+  <line x1="66" y1="65" x2="70" y2="65"/>
+  <line x1="35" y1="52" x2="38" y2="55"/>
+  <line x1="58" y1="75" x2="61" y2="78"/>
+  <line x1="35" y1="78" x2="38" y2="75"/>
+  <line x1="58" y1="55" x2="61" y2="52"/>
+  <!-- Connection to robot -->
+  <line x1="66" y1="65" x2="96" y2="75" stroke-dasharray="4 3" stroke-opacity="0.35"/>
+
+  <!-- ===== Small gear (below big gear) ===== -->
+  <circle cx="62" cy="105" r="10"/>
+  <circle cx="62" cy="105" r="4"/>
+  <line x1="62" y1="92" x2="62" y2="95"/>
+  <line x1="62" y1="115" x2="62" y2="118"/>
+  <line x1="49" y1="105" x2="52" y2="105"/>
+  <line x1="72" y1="105" x2="75" y2="105"/>
+
+  <!-- ===== Lightning bolt (top right) ===== -->
+  <polyline points="240,40 228,68 242,68 230,96" stroke-width="2.5"/>
+
+  <!-- ===== Share/network icon (right) ===== -->
+  <circle cx="260" cy="125" r="8"/>
+  <circle cx="285" cy="105" r="6"/>
+  <circle cx="285" cy="145" r="6"/>
+  <line x1="267" y1="121" x2="280" y2="109"/>
+  <line x1="267" y1="129" x2="280" y2="141"/>
+
+  <!-- Connection to robot -->
+  <line x1="252" y1="125" x2="204" y2="100" stroke-dasharray="4 3" stroke-opacity="0.35"/>
+
+  <!-- ===== Chat bubble (bottom right) ===== -->
+  <rect x="225" y="170" width="60" height="40" rx="10"/>
+  <path d="M238 210 L244 222 L252 210"/>
+  <line x1="237" y1="183" x2="273" y2="183" stroke-opacity="0.35"/>
+  <line x1="237" y1="191" x2="266" y2="191" stroke-opacity="0.35"/>
+  <line x1="237" y1="199" x2="255" y2="199" stroke-opacity="0.35"/>
+  <!-- Connection to robot -->
+  <line x1="225" y1="185" x2="182" y2="160" stroke-dasharray="4 3" stroke-opacity="0.35"/>
+
+  <!-- ===== Document (bottom left) ===== -->
+  <rect x="20" y="155" width="42" height="54" rx="5"/>
+  <path d="M46 155 L46 166 L57 166" stroke-opacity="0.5"/>
+  <line x1="28" y1="176" x2="52" y2="176" stroke-opacity="0.3"/>
+  <line x1="28" y1="184" x2="48" y2="184" stroke-opacity="0.3"/>
+  <line x1="28" y1="192" x2="50" y2="192" stroke-opacity="0.3"/>
+  <polyline points="32,197 36,201 44,191" stroke-width="2" stroke-opacity="0.5"/>
+  <!-- Connection to robot -->
+  <line x1="62" y1="175" x2="118" y2="160" stroke-dasharray="4 3" stroke-opacity="0.35"/>
+
+  <!-- ===== Shield (left middle) ===== -->
+  <path d="M42 135 L42 148 C42 157, 54 164, 54 164 C54 164, 66 157, 66 148 L66 135 L54 128 Z"/>
+  <polyline points="49,146 53,150 60,142" stroke-width="1.8"/>
+
+  <!-- ===== Sparkles / plus signs ===== -->
+  <line x1="95" y1="32" x2="95" y2="44"/>
+  <line x1="89" y1="38" x2="101" y2="38"/>
+
+  <line x1="210" y1="42" x2="210" y2="54"/>
+  <line x1="204" y1="48" x2="216" y2="48"/>
+
+  <line x1="100" y1="200" x2="100" y2="212"/>
+  <line x1="94" y1="206" x2="106" y2="206"/>
+
+  <line x1="200" y1="230" x2="200" y2="242"/>
+  <line x1="194" y1="236" x2="206" y2="236"/>
+
+  <line x1="295" y1="160" x2="295" y2="170"/>
+  <line x1="290" y1="165" x2="300" y2="165"/>
+
+  <!-- ===== Small dots decoration ===== -->
+  <circle cx="82" cy="148" r="2" fill="#1a1a1a" opacity="0.15" stroke="none"/>
+  <circle cx="218" cy="135" r="2" fill="#1a1a1a" opacity="0.15" stroke="none"/>
+  <circle cx="120" y="228" r="2" fill="#1a1a1a" opacity="0.15" stroke="none"/>
+</svg>

@@ -15,27 +15,13 @@ export const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const formId = import.meta.env.VITE_FORMSPREE_ID;
-    if (!formId) {
-      toast({
-        title: 'Form not configured',
-        description: 'Add VITE_FORMSPREE_ID to your .env file. See .env.example.',
-        variant: 'destructive',
-      });
-      return;
-    }
     setIsSubmitting(true);
     try {
-      const res = await fetch(`https://formspree.io/f/${formId}`, {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const res = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _replyto: formData.email,
-        }),
+        body: JSON.stringify(formData),
       });
       if (!res.ok) throw new Error('Send failed');
       toast({ title: 'Message sent!', description: "We'll get back to you within 24 hours." });

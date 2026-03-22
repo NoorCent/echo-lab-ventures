@@ -29,7 +29,6 @@ export const HeroSection = () => {
       >
         <span className="hero-badge mb-4 rounded-full border border-[var(--accent-bar)]/30 bg-[var(--accent-bar)]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--accent-bar)]">
           {site.tagline}
-       
         </span>
         <h1 className="hero_title font-light text-4xl leading-[1.15] tracking-tight text-[#2a2a2a]/70 dark:text-gray-200 md:text-5xl md:leading-[1.2] lg:text-6xl lg:leading-[1.15]">
           <strong className="font-bold text-[#2a2a2a] dark:text-white">
@@ -40,7 +39,7 @@ export const HeroSection = () => {
             Standard
           </span>
         </h1>
-        <p className="description mx-auto mt-6 max-w-[32rem] text-balance font-light text-lg leading-relaxed text-[#2a2a2a] dark:text-gray-200 md:mt-8 md:max-w-[38rem] md:text-base">
+        <p className="description mx-auto mt-6 max-w-[32rem] text-center font-light text-lg leading-relaxed text-[#2a2a2a] dark:text-gray-200 md:mt-8 md:max-w-[38rem] md:text-base">
           {site.description}
         </p>
         <div className="links_container mt-8 flex flex-wrap items-center justify-center gap-4 md:mt-10">

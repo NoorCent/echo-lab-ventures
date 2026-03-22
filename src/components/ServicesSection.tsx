@@ -123,7 +123,7 @@ export const ServicesSection = () => {
                     }`}
                   >
                     <div
-                      className={`flex min-h-[280px] flex-col justify-between gap-4 p-6 md:min-h-[260px] md:flex-row md:items-center md:gap-6 md:p-8`}
+                      className={`flex min-h-[240px] flex-col justify-between gap-4 p-6 md:min-h-[240px] md:flex-row md:items-center md:gap-6 md:p-8`}
                     >
                       <div className="title_anchor relative z-10 flex w-full flex-col justify-between gap-6 md:w-1/2">
                         <h3 className="font-display text-xl font-medium leading-tight md:text-2xl md:leading-9">
@@ -145,12 +145,16 @@ export const ServicesSection = () => {
                           <span>Show Less</span>
                         </button>
                       </div>
-                      <div className="image_container relative z-10 h-40 w-full overflow-hidden rounded-lg md:h-[200px] md:w-2/5">
+                      <div className="image_container relative z-10 h-44 w-full overflow-hidden rounded-lg md:h-[220px] md:w-2/5">
                         <img
                           src={service.imageUrl}
                           alt=""
                           loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-110"
+                          className={`h-full w-full transition-transform duration-500 ease-out group-hover/card:scale-110 ${
+                            service.imageUrl.endsWith('.svg')
+                              ? `object-contain p-4 ${isDark ? 'brightness-0 invert' : ''}`
+                              : 'object-cover'
+                          }`}
                         />
                       </div>
                     </div>
@@ -230,12 +234,16 @@ export const ServicesSection = () => {
                         <h3 className="font-display text-base font-medium leading-tight line-clamp-2">
                           {service.title}
                         </h3>
-                        <div className="relative z-10 h-24 w-full flex-1 overflow-hidden rounded-lg">
+                        <div className="relative z-10 h-28 w-full flex-1 overflow-hidden rounded-lg">
                           <img
                             src={service.imageUrl}
                             alt=""
                             loading="lazy"
-                            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-110"
+                            className={`h-full w-full transition-transform duration-500 ease-out group-hover/card:scale-110 ${
+                              service.imageUrl.endsWith('.svg')
+                                ? `object-contain p-2 ${isDark ? 'brightness-0 invert' : ''}`
+                                : 'object-cover'
+                            }`}
                           />
                         </div>
                         <span
@@ -277,7 +285,7 @@ export const ServicesSection = () => {
                   }`}
                 >
                   <div
-                    className={`flex min-h-[280px] flex-col justify-between gap-4 p-6 md:min-h-[310px] md:flex-row md:items-center md:gap-4 md:p-8`}
+                    className={`flex min-h-[260px] flex-col justify-between gap-4 p-6 md:min-h-[280px] md:flex-row md:items-center md:gap-4 md:p-8`}
                   >
                     {!isDark && (
                       <span
@@ -317,16 +325,16 @@ export const ServicesSection = () => {
                       </button>
                     </div>
 
-                    <div className="image_container relative z-10 h-40 w-full overflow-hidden rounded-lg md:h-[200px] md:w-1/2">
+                    <div className="image_container relative z-10 h-44 w-full overflow-hidden rounded-lg md:h-[220px] md:w-1/2">
                       <img
                         src={service.imageUrl}
                         alt=""
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-110"
-                      />
-                      <span
-                        className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover/card:bg-primary/10 pointer-events-none rounded-lg"
-                        aria-hidden
+                        className={`h-full w-full transition-transform duration-500 ease-out group-hover/card:scale-110 ${
+                          service.imageUrl.endsWith('.svg')
+                            ? `object-contain p-4 ${isDark ? 'brightness-0 invert' : ''}`
+                            : 'object-cover'
+                        }`}
                       />
                     </div>
                   </div>

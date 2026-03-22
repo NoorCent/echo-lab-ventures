@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import { Smartphone, Code2, Brain, Palette } from 'lucide-react';
+import { Globe, Smartphone, BarChart3, Bot } from 'lucide-react';
 import { SectionHeader } from '@/components/SectionHeader';
 import { site } from '@/data/site';
 
 const focusAreas = [
-  { label: 'Web & Mobile Development', icon: Smartphone },
-  { label: 'Backend & APIs', icon: Code2 },
-  { label: 'AI & ML Solutions', icon: Brain },
-  { label: 'UI/UX & Product Design', icon: Palette },
+  { label: 'Website & Web App Development', icon: Globe },
+  { label: 'Mobile App Development', icon: Smartphone },
+  { label: 'Data Science & ML', icon: BarChart3 },
+  { label: 'AI & Automation Solutions', icon: Bot },
 ];
 
 const container = {

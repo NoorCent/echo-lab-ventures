@@ -87,7 +87,7 @@ export const Navbar = () => {
           <motion.img
             src={site.logoUrl}
             alt={site.name}
-            className="h-20 w-auto object-contain block"
+            className="h-14 w-auto object-contain block"
             initial={{ x: '-110%' }}
             animate={{ x: 0 }}
             transition={{ type: 'spring', stiffness: 130, damping: 18, mass: 1.2, delay: 0.1 }}
